@@ -1,0 +1,8 @@
+{
+  "name": "kelphelpers-org",
+  "version": "1.0.0",
+  "description": "Kelp Helpers main landing page — kelphelpers.org",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
