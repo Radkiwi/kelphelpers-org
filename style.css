@@ -588,3 +588,38 @@ p  { color: var(--forest); line-height: 1.7; }
   .product-emoji { width: 64px; height: 64px; font-size: 1.8rem; }
   .product-cta { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 8px; text-align: left; }
 }
+
+/* ── BLOG POST ──────────────────────────────────────────────── */
+.blog-hero { background: var(--navy); padding: 150px 0 70px; }
+.blog-byline { font-size: 0.85rem; color: rgba(237,235,201,0.55); margin-bottom: 18px; }
+.blog-byline strong { color: var(--lime); }
+.blog-hero h1 { color: var(--cream); max-width: 760px; margin-bottom: 22px; }
+.blog-deck { font-size: 1.05rem; color: rgba(237,235,201,0.75); max-width: 680px; line-height: 1.7; }
+.article { padding: 80px 0; background: var(--cream); }
+.article-body { max-width: 700px; margin: 0 auto; }
+.article-body p { font-size: 1.02rem; color: var(--forest); line-height: 1.85; margin-bottom: 24px; }
+.article-body h2 { font-size: 1.5rem; color: var(--navy); margin: 48px 0 18px; }
+.article-body ul { margin: 0 0 24px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.article-body ul li { font-size: 1.02rem; color: var(--forest); line-height: 1.75; padding-left: 26px; position: relative; }
+.article-body ul li::before { content: '🌊'; position: absolute; left: 0; top: 1px; font-size: 0.85rem; }
+.article-body ul li strong { color: var(--navy); }
+.pull-quote {
+  font-family: 'Lora', serif; font-style: italic; font-size: 1.4rem; color: var(--navy);
+  border-left: 3px solid var(--lime); padding: 4px 0 4px 24px; margin: 40px 0; line-height: 1.5;
+}
+.pull-quote cite { display: block; font-size: 0.8rem; font-style: normal; font-weight: 600; color: var(--forest); margin-top: 10px; }
+
+/* ── INTERACTIVE CHART ──────────────────────────────────────── */
+.chart-block { max-width: 760px; margin: 48px auto 0; background: #fff; border: 1px solid rgba(18,53,64,0.08); border-radius: var(--radius-lg); padding: 28px; }
+.chart-toggle { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+.chart-toggle button {
+  font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 9px 18px; border-radius: 99px; border: 1.5px solid rgba(18,53,64,0.15);
+  background: transparent; color: var(--forest); cursor: pointer; transition: all var(--transition);
+}
+.chart-toggle button.active { background: var(--navy); color: var(--lime); border-color: var(--navy); }
+.chart-caption { font-size: 0.82rem; color: var(--forest); text-align: center; margin-top: 14px; }
+
+@media (max-width: 700px) {
+  .blog-hero { padding: 130px 0 56px; }
+}
