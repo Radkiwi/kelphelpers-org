@@ -376,6 +376,15 @@ p  { color: var(--forest); line-height: 1.7; }
 .footer-links { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
 .footer-links a { font-size: 0.875rem; color: rgba(237,235,201,0.6); transition: color var(--transition); }
 .footer-links a:hover { color: var(--lime); }
+.footer-social { display: flex; gap: 14px; align-items: center; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(237,235,201,0.08); border: 1px solid rgba(237,235,201,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(237,235,201,0.7); transition: all var(--transition);
+}
+.footer-social a:hover { background: rgba(213,251,160,0.15); border-color: var(--lime); color: var(--lime); }
+.footer-social svg { width: 17px; height: 17px; }
 .footer-bottom {
   display: flex; justify-content: space-between; align-items: center;
   padding-top: 24px; border-top: 1px solid rgba(237,235,201,0.1);
