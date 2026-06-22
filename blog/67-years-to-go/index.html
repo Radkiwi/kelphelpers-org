@@ -98,15 +98,22 @@
         <li><strong>Medium Emissions (RCP 4.5)</strong> — we successfully curb global emissions. Sea surface temperature around New Zealand rises by about 1.1–1.4°C compared to the 1990s, and pH dips to around 7.92. Marine reserves are highly likely to maintain healthy, stable kelp forests under this scenario.</li>
         <li><strong>High Emissions (RCP 8.5)</strong> — global emissions continue unabated. SST could climb by 2.5°C or more by the end of the century, and pH could plummet to 7.77. This level of extreme warming and acidification would severely stress marine life — even protected reserves could see kelp die-offs or replacement by invasive turf algae.</li>
       </ul>
-      <p>To help you explore these interconnected trends across the next several decades, I've built an interactive visualisation below — based on Dr Nick Shears' long-term research at the University of Auckland. Toggle between the two scenarios to see how they shape the future of Auckland's coastal waters.</p>
+      <p>Climate pathway is only half the story. The data from Dr Nick Shears' long-term monitoring at Leigh shows that local reef management — whether an area is a no-take marine reserve or remains open to fishing — is just as decisive for kelp as the emissions scenario itself. Remove the fishing pressure on snapper and rock lobster, and they keep kina in check; leave it in place, and the kina graze the reef down to bare rock regardless of what the climate does.</p>
+      <p>To help you explore these interconnected trends across the next several decades, I've built an interactive visualisation below. Toggle the emissions pathway <em>and</em> the reef management practice to see how they shape the future of Auckland's coastal waters — together.</p>
 
       <div class="chart-block">
+        <div class="chart-toggle-label">Emissions Pathway</div>
         <div class="chart-toggle">
           <button id="btn-medium" class="active">Medium Emissions (RCP 4.5)</button>
           <button id="btn-high">High Emissions (RCP 8.5)</button>
         </div>
+        <div class="chart-toggle-label">Reef Management</div>
+        <div class="chart-toggle">
+          <button id="btn-protected" class="active">Protected (No-Take Reserve)</button>
+          <button id="btn-fished">Fished</button>
+        </div>
         <canvas id="marineChart"></canvas>
-        <p class="chart-caption">Adult kelp density in marine reserves vs. fished reefs, sea surface temperature anomaly, and ocean pH — 1992 to 2092.</p>
+        <p class="chart-caption">Adult kelp density under the selected reef management practice, alongside sea surface temperature anomaly and ocean pH for the selected emissions pathway — 1992 to 2092.</p>
       </div>
 
       <h2>The Unthinkable Alternative</h2>
@@ -193,18 +200,39 @@
 
   const ctx = document.getElementById('marineChart').getContext('2d');
 
-  function buildDatasets(s) {
+  const state = { emissions: 'medium', management: 'protected' };
+
+  function buildDatasets(s, management) {
+    const protectedOn = management === 'protected';
     return [
-      { label: 'Kelp Density (Protected Reserve)', data: s.kelpProtected, borderColor: navy, backgroundColor: 'rgba(18,53,64,0.12)', borderWidth: 3, yAxisID: 'yKelp', tension: 0.3 },
-      { label: 'Kelp Density (Fished Area)', data: s.kelpFished, borderColor: sage, borderDash: [5, 5], borderWidth: 2, yAxisID: 'yKelp', tension: 0.3 },
-      { label: 'SST Anomaly (°C)', data: s.sst, borderColor: '#c0563a', backgroundColor: 'rgba(192,86,58,0.12)', borderWidth: 3, yAxisID: 'ySST', tension: 0.3 },
-      { label: 'Ocean pH', data: s.ph, borderColor: forest, backgroundColor: 'rgba(103,113,80,0.12)', borderWidth: 3, yAxisID: 'yPH', tension: 0.3 }
+      {
+        label: 'Kelp Density — Protected Reserve',
+        data: s.kelpProtected,
+        borderColor: navy,
+        backgroundColor: protectedOn ? 'rgba(18,53,64,0.12)' : 'rgba(18,53,64,0)',
+        borderWidth: protectedOn ? 3 : 1.5,
+        borderDash: protectedOn ? [] : [4, 4],
+        yAxisID: 'yKelp', tension: 0.3,
+        order: protectedOn ? 1 : 2
+      },
+      {
+        label: 'Kelp Density — Fished Reef',
+        data: s.kelpFished,
+        borderColor: sage,
+        backgroundColor: !protectedOn ? 'rgba(182,184,150,0.18)' : 'rgba(182,184,150,0)',
+        borderWidth: !protectedOn ? 3 : 1.5,
+        borderDash: !protectedOn ? [] : [4, 4],
+        yAxisID: 'yKelp', tension: 0.3,
+        order: !protectedOn ? 1 : 2
+      },
+      { label: 'SST Anomaly (°C)', data: s.sst, borderColor: '#c0563a', backgroundColor: 'rgba(192,86,58,0.12)', borderWidth: 3, yAxisID: 'ySST', tension: 0.3, order: 3 },
+      { label: 'Ocean pH', data: s.ph, borderColor: forest, backgroundColor: 'rgba(103,113,80,0.12)', borderWidth: 3, yAxisID: 'yPH', tension: 0.3, order: 4 }
     ];
   }
 
   const marineChart = new Chart(ctx, {
     type: 'line',
-    data: { labels: years, datasets: buildDatasets(scenarios.medium) },
+    data: { labels: years, datasets: buildDatasets(scenarios.medium, 'protected') },
     options: {
       responsive: true,
       interaction: { mode: 'index', intersect: false },
@@ -232,16 +260,22 @@
 
   const btnMedium = document.getElementById('btn-medium');
   const btnHigh = document.getElementById('btn-high');
+  const btnProtected = document.getElementById('btn-protected');
+  const btnFished = document.getElementById('btn-fished');
 
-  function setScenario(name) {
-    marineChart.data.datasets = buildDatasets(scenarios[name]);
+  function render() {
+    marineChart.data.datasets = buildDatasets(scenarios[state.emissions], state.management);
     marineChart.update();
-    btnMedium.classList.toggle('active', name === 'medium');
-    btnHigh.classList.toggle('active', name === 'high');
+    btnMedium.classList.toggle('active', state.emissions === 'medium');
+    btnHigh.classList.toggle('active', state.emissions === 'high');
+    btnProtected.classList.toggle('active', state.management === 'protected');
+    btnFished.classList.toggle('active', state.management === 'fished');
   }
 
-  btnMedium.addEventListener('click', () => setScenario('medium'));
-  btnHigh.addEventListener('click', () => setScenario('high'));
+  btnMedium.addEventListener('click', () => { state.emissions = 'medium'; render(); });
+  btnHigh.addEventListener('click', () => { state.emissions = 'high'; render(); });
+  btnProtected.addEventListener('click', () => { state.management = 'protected'; render(); });
+  btnFished.addEventListener('click', () => { state.management = 'fished'; render(); });
 })();
 </script>
 </body>
