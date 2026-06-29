@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Empty Reef: New Zealand's Vanishing Fish Stocks — Kelp Helpers</title>
+  <meta name="description" content="Snapper, tarakihi, rock lobster, orange roughy — four New Zealand fish stocks, four very different declines. Real biomass data, recreated as charts, with sources."/>
+  <link rel="stylesheet" href="/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo" aria-label="Kelp Helpers home">
+    <svg viewBox="0 0 144 135" xmlns="http://www.w3.org/2000/svg" class="nav-logomark" aria-hidden="true">
+      <path fill="currentColor" d="M.26,59.72c0-4.05.02-8.1,0-12.15-.02-3.36-.14-6.73-.14-10.09,0-3.89.14-7.77.13-11.66,0-2.86-.2-5.71-.24-8.57-.03-1.94.03-3.9.59-5.79,1.18-3.93,3.88-6.5,7.81-7.93,1.97-.72,4.05-.84,6.12-.78,8.45.25,16.91,0,25.36-.01,2.8,0,5.61.12,8.38.45,5.75.7,9.76,4.75,10.51,10.28.57,4.21-.95,7.7-3.86,10.73-2.53,2.64-5.48,4.83-8.44,6.99-3.05,2.22-6.07,4.46-8.75,7.09-1.31,1.29-2.43,2.69-2.95,4.46-1.48,5,1.13,9.99,6.19,11.78,1.95.69,3.95,1.18,6.03.87,3.82-.56,6.78-2.37,8.64-5.7,1.17-2.1,1.85-4.38,2.48-6.67,1.82-6.65,3.64-13.3,5.4-19.96.84-3.18,1.53-6.4,2.36-9.58.56-2.14,1.5-4.13,2.87-5.91,1.86-2.44,4.48-3.67,7.45-4.34,3.26-.73,6.56-.75,9.88-.7,7.06.11,10.08.2,17.14.29,2.31.03,4.62-.02,6.92.12,4.99.31,8.24,3,10.23,7.27.9,1.93,1.18,3.98,1.25,6.07.06,1.97.03,3.95.06,5.93-1.26,29.72-48.67,18.33-48.67,44.79,0,15.07,14.76,18.46,19.11,19.48,2.96.69,12.86,2.04,21.12,4.37,4.68,1.32,7.51,5.93,7.49,11.98,0,18.77-10.71,16.52-13.61,16.54-3.87.03-7.74-.04-11.61.05-4.77.1-5.49.34-10.26.47-1.88.05-3.77.05-5.65-.02-5.53-.22-9.6-2.67-12.11-7.47-.99-1.9-1.7-3.89-2.27-5.92-1.18-4.16-2.3-8.33-3.38-12.52-1.07-4.12-2.02-8.27-3.09-12.39-.65-2.53-1.28-5.08-2.37-7.49-.89-1.96-1.98-3.81-3.75-5.17-5.18-3.97-12.29-2.91-16.13,2.37-1.26,1.73-1.99,3.68-2.54,5.69-1.64,5.97-3.33,11.92-4.85,17.92-.99,3.92-1.7,7.9-2.54,11.85-.48,2.28-1.02,4.55-2.35,6.54-2.25,3.35-5.32,5.63-9.47,6.29-6.18.98-12.38-3.1-13.75-8.97-.67-2.87-.92-5.78-.91-8.71.02-6.14.08-12.28.11-18.43.02-4.79.02-9.57.02-14.36,0-3.12,0-6.24,0-9.36h.04"/>
+    </svg>
+    <span class="nav-wordmark">Kelp <strong>Helpers</strong></span>
+  </a>
+  <div class="nav-links">
+    <a href="/whykelp">Why Kelp</a>
+    <a href="/how">Our Model</a>
+    <div class="nav-dropdown">
+      <a href="/initiatives" class="nav-dropdown-trigger">Initiatives <span class="caret">▾</span></a>
+      <div class="nav-dropdown-menu">
+        <a href="/">🌿 Kelp Helpers</a>
+        <a href="/kiwikrete">🗿 KiwiKrete</a>
+        <a href="/calcara">☕ Calcara</a>
+        <a href="/removals">🤿 Removals</a>
+        <a href="/pingo">🐧 Pingo</a>
+        <a href="/seafoo">🍄 Seafoo™</a>
+        <a href="/reef-rescue">🕹️ Reef Rescue</a>
+        <a href="/seasniper">🎯 SeaSniper</a>
+        <a href="/sailing-into-sunset">⛵ Sailing Into Sunset</a>
+        <a href="/founders-story">🌿 Founder's Story</a>
+        <a href="https://surfshacks.rad.kiwi/" target="_blank">🏄 Surf Shacks</a>
+      </div>
+    </div>
+    <a href="/help" class="btn btn-nav">Help!</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/whykelp">Why Kelp</a>
+  <a href="/how">Our Model</a>
+  <a href="/initiatives">Initiatives</a>
+  <a href="/">🌿 Kelp Helpers</a>
+  <a href="/kiwikrete">🗿 KiwiKrete</a>
+  <a href="/calcara">☕ Calcara</a>
+  <a href="/removals">🤿 Removals</a>
+  <a href="/pingo">🐧 Pingo</a>
+  <a href="/seafoo">🍄 Seafoo™</a>
+  <a href="/reef-rescue">🕹️ Reef Rescue</a>
+  <a href="/seasniper">🎯 SeaSniper</a>
+  <a href="/sailing-into-sunset">⛵ Sailing Into Sunset</a>
+  <a href="/founders-story">🌿 Founder's Story</a>
+  <a href="https://surfshacks.rad.kiwi/" target="_blank">🏄 Surf Shacks</a>
+  <a href="/help" class="btn btn-primary">Help your way!</a>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-byline">Blog &middot; By <strong>Alex Radley</strong> &middot; Founder, Kelp Helpers</div>
+    <h1>The Empty Reef: New Zealand's Vanishing Fish Stocks</h1>
+    <p class="blog-deck">Snapper, tarakihi, rock lobster, orange roughy — four very different fisheries, four very different timelines, and the same underlying story. Here's what the actual biomass data says, recreated as charts, with every source linked.</p>
+  </div>
+</section>
+
+<section class="article">
+  <div class="container">
+    <div class="article-body">
+
+      <p>It's easy to talk about "declining fish stocks" in the abstract. It's harder, and more useful, to look at the actual numbers fisheries scientists use to track a stock's health: biomass as a percentage of its <em>unfished</em> level — what the population would be if no one had ever fished it. Below are four New Zealand species where that number has been measured for decades, each telling a slightly different version of the same story.</p>
+
+      <h2>Snapper (SNA1) — the recovery story</h2>
+      <p>Snapper in the Hauraki Gulf and Bay of Plenty (the SNA1 stock) is New Zealand's best-known fisheries recovery. By the early 1980s, heavy fishing pressure had driven the stock down to roughly 10–15% of its unfished biomass. The introduction of the Quota Management System in 1986 changed the trajectory: SNA1 has since rebuilt to somewhere in the 40–50% range, with a formal target of 40% of unfished biomass under the current SNA1 Management Plan.</p>
+
+      <h2>Tarakihi (East Coast) — the stock still falling</h2>
+      <p>Tarakihi tells the opposite story. The East Coast stock was estimated at around 17% of unfished biomass in 2017, and a 2018 assessment put it lower still, at 15.9% — meaning roughly 84% of the original tarakihi population had been removed from east coast waters. Modelling shows the stock has not been above 27% of unfished biomass since 1975, and has sat below 20% since the early 2000s. The current rebuild plan targets 35% of unfished biomass, but not until 2037.</p>
+
+      <h2>Rock Lobster (Hauraki Gulf) — locally "functionally extinct"</h2>
+      <p>Crayfish in the inner Hauraki Gulf show how a species can collapse locally even while broader regional numbers look healthier. Research at the Leigh and Tāwharanui marine reserves found legal-sized lobster biomass on fished reefs outside the reserves sitting at just 2–3% of the biomass found inside them; a comparable study at Hahei found fished reefs at around 7% of in-reserve biomass. By 2016, scientists were describing Hauraki Gulf crayfish as "functionally extinct" in the areas open to fishing — even as the wider CRA2 stock assessment (which spans a much larger area) has shown signs of recovery in recent years.</p>
+
+      <h2>Orange Roughy — the cautionary tale</h2>
+      <p>Orange roughy is the starkest example of how badly a deepwater fishery can go wrong when a slow-growing species (it can live to 120 years) is fished like a fast-growing one. New Zealand's Challenger Plateau stock collapsed to just 3% of its unfished biomass before catch limits were drastically cut, and three of the country's eight orange roughy fisheries had closed entirely by the end of the 1990s. A 2025 assessment found the fishery's largest stock close to collapse again, at an estimated 8–18% of unfished biomass — and modelling suggests that even if fishing stopped immediately, recovery to a safe level could take 33 to 74 years, possibly longer.</p>
+
+      <div class="chart-block">
+        <canvas id="fishChart"></canvas>
+        <p class="chart-caption">Current (or most recent) biomass as a percentage of unfished biomass, compared with each stock's official rebuild target where one exists. Rock lobster and orange roughy figures reflect the specific local studies and historic collapse cited above, not the full management-area stock assessment.</p>
+      </div>
+
+      <h2>Why this matters for kelp</h2>
+      <p>Snapper and rock lobster aren't just food fish — they're the predators that keep kina in check on Aotearoa's reefs. When their numbers collapse locally, as they have across much of the inner Hauraki Gulf, kina populations explode unchecked, graze kelp forests down to bare rock, and create the urchin barrens that Kelp Helpers exists to reverse. The decline in this chart isn't a separate problem from kelp loss — it's the cause of it.</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Help rebuild the reef from the bottom up</h2>
+      <p>Restoring kelp and removing kina won't bring snapper and crayfish back on its own — but it rebuilds the habitat their recovery depends on.</p>
+      <a href="/help" class="cta-btn-white">Help Your Way →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="article-body">
+      <h2 style="font-size:1.3rem;">Sources</h2>
+      <ul>
+        <li>Fisheries New Zealand, <a href="https://www.mpi.govt.nz/dmsdocument/13801-Snapper-SNA1-Management-Plan" target="_blank">SNA1 Snapper Management Plan</a></li>
+        <li>Fisheries New Zealand, <a href="https://www.mpi.govt.nz/dmsdocument/69972-Fisheries-Assessment-Plenary-May-2025-Volume-3-SNAPPER-SNA-1" target="_blank">Fisheries Assessment Plenary, May 2025 — Snapper (SNA 1)</a></li>
+        <li>NIWA, <a href="https://niwa.co.nz/fisheries/snapper-stock-status" target="_blank">Snapper Stock Status</a></li>
+        <li>The Fishing Website, <a href="https://www.fishing.net.nz/fishing-advice/general-articles/tarakihi-the-forgotten-fish/" target="_blank">Tarakihi: The Forgotten Fish</a></li>
+        <li>Fisheries New Zealand, <a href="https://www.mpi.govt.nz/fishing-aquaculture/fisheries-management/fish-stock-status/tarakihi-a-stock-under-a-rebuilding-plan" target="_blank">Tarakihi: a stock under a rebuilding plan</a></li>
+        <li>The Spinoff, <a href="https://thespinoff.co.nz/society/28-06-2021/the-fight-to-save-one-of-aotearoas-favourite-fish" target="_blank">The fight to save one of Aotearoa's favourite fish</a></li>
+        <li>1News, <a href="https://www.1news.co.nz/2018/02/05/functionally-extinct-fishing-advocacy-group-want-to-see-crayfish-put-before-profit-due-to-declining-numbers/" target="_blank">'Functionally extinct' — declining crayfish numbers</a></li>
+        <li>Hauraki Gulf Forum, <a href="https://gulfjournal.org.nz/2022/06/decline-of-crayfish-in-marine-reserves/" target="_blank">Why are crayfish numbers falling even in our no-take Marine Reserves?</a></li>
+        <li>The Fishing Website, <a href="https://www.fishing.net.nz/fishing-advice/general-articles/myth-busting-the-science-behind-the-cra-2-rock-lobster-fishery/" target="_blank">Myth Busting: The Science Behind the CRA 2 Rock Lobster Fishery</a></li>
+        <li>Office of the Prime Minister's Chief Science Advisor, <a href="https://www.pmcsa.ac.nz/2021/02/21/orange-roughy-stock-health/" target="_blank">Case study: Orange roughy stock health</a></li>
+        <li>Newsroom, <a href="https://newsroom.co.nz/2025/07/08/study-finds-nzs-largest-orange-roughy-fishery-facing-collapse/" target="_blank">Study finds NZ's largest orange roughy fishery facing collapse</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg viewBox="0 0 144 135" xmlns="http://www.w3.org/2000/svg" class="footer-logomark" aria-hidden="true">
+          <path fill="currentColor" d="M.26,59.72c0-4.05.02-8.1,0-12.15-.02-3.36-.14-6.73-.14-10.09,0-3.89.14-7.77.13-11.66,0-2.86-.2-5.71-.24-8.57-.03-1.94.03-3.9.59-5.79,1.18-3.93,3.88-6.5,7.81-7.93,1.97-.72,4.05-.84,6.12-.78,8.45.25,16.91,0,25.36-.01,2.8,0,5.61.12,8.38.45,5.75.7,9.76,4.75,10.51,10.28.57,4.21-.95,7.7-3.86,10.73-2.53,2.64-5.48,4.83-8.44,6.99-3.05,2.22-6.07,4.46-8.75,7.09-1.31,1.29-2.43,2.69-2.95,4.46-1.48,5,1.13,9.99,6.19,11.78,1.95.69,3.95,1.18,6.03.87,3.82-.56,6.78-2.37,8.64-5.7,1.17-2.1,1.85-4.38,2.48-6.67,1.82-6.65,3.64-13.3,5.4-19.96.84-3.18,1.53-6.4,2.36-9.58.56-2.14,1.5-4.13,2.87-5.91,1.86-2.44,4.48-3.67,7.45-4.34,3.26-.73,6.56-.75,9.88-.7,7.06.11,10.08.2,17.14.29,2.31.03,4.62-.02,6.92.12,4.99.31,8.24,3,10.23,7.27.9,1.93,1.18,3.98,1.25,6.07.06,1.97.03,3.95.06,5.93-1.26,29.72-48.67,18.33-48.67,44.79,0,15.07,14.76,18.46,19.11,19.48,2.96.69,12.86,2.04,21.12,4.37,4.68,1.32,7.51,5.93,7.49,11.98,0,18.77-10.71,16.52-13.61,16.54-3.87.03-7.74-.04-11.61.05-4.77.1-5.49.34-10.26.47-1.88.05-3.77.05-5.65-.02-5.53-.22-9.6-2.67-12.11-7.47-.99-1.9-1.7-3.89-2.27-5.92-1.18-4.16-2.3-8.33-3.38-12.52-1.07-4.12-2.02-8.27-3.09-12.39-.65-2.53-1.28-5.08-2.37-7.49-.89-1.96-1.98-3.81-3.75-5.17-5.18-3.97-12.29-2.91-16.13,2.37-1.26,1.73-1.99,3.68-2.54,5.69-1.64,5.97-3.33,11.92-4.85,17.92-.99,3.92-1.7,7.9-2.54,11.85-.48,2.28-1.02,4.55-2.35,6.54-2.25,3.35-5.32,5.63-9.47,6.29-6.18.98-12.38-3.1-13.75-8.97-.67-2.87-.92-5.78-.91-8.71.02-6.14.08-12.28.11-18.43.02-4.79.02-9.57.02-14.36,0-3.12,0-6.24,0-9.36h.04"/>
+        </svg>
+        <div>
+          <div class="footer-name">Kelp Helpers</div>
+          <div class="footer-tagline">Restoring Aotearoa's underwater forests</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://restore.kelphelpers.org">Restoration Hub</a>
+        <a href="https://kelphelpers.com" target="_blank">Shop</a>
+        <a href="/initiatives">Initiatives</a>
+        <a href="/blog/67-years-to-go">Blog</a>
+        <a href="mailto:alex@kelphelpers.org">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/kelphelpersnz/" target="_blank" aria-label="Kelp Helpers on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/102709232" target="_blank" aria-label="Kelp Helpers on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5v6M7.5 7.5v.01M12 16.5v-3.7a2.3 2.3 0 0 1 4.6 0v3.7M12 16.5v-6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kelp Helpers</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/supabase-config.js"></script>
+<script src="/main.js"></script>
+<script>
+(function() {
+  const ctx = document.getElementById('fishChart').getContext('2d');
+  const navy = '#123540';
+  const lime = '#D5FBA0';
+  const forest = '#677150';
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [
+        'Snapper (SNA1)',
+        'Tarakihi (East Coast)',
+        'Rock Lobster (Hauraki Gulf, fished reefs)',
+        'Orange Roughy (Challenger Plateau, historic collapse)'
+      ],
+      datasets: [
+        {
+          label: 'Current / most recent estimate (% of unfished biomass)',
+          data: [45, 16, 3, 3],
+          backgroundColor: navy,
+          borderRadius: 4
+        },
+        {
+          label: 'Official rebuild target (% of unfished biomass)',
+          data: [40, 35, null, null],
+          backgroundColor: lime,
+          borderRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { family: 'Inter' }, color: navy } },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              if (context.parsed.y === null) return null;
+              return context.dataset.label + ': ' + context.parsed.y + '%';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 60,
+          title: { display: true, text: '% of unfished biomass', font: { weight: 'bold' } }
+        },
+        x: {
+          ticks: { font: { family: 'Inter', size: 11 } }
+        }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>
