@@ -85,7 +85,7 @@
         </div>
         <div class="product-cta">
           <div class="product-price">From $25<span>per tree planted</span></div>
-          <a href="https://kelphelpers.com" class="btn btn-primary" target="_blank">Plant One →</a>
+          <a href="https://kelphelpers.com" class="btn btn-primary" target="_blank" data-track="plant-a-kelp-tree">Plant One →</a>
         </div>
       </div>
 
@@ -98,7 +98,7 @@
         </div>
         <div class="product-cta">
           <div class="product-price">$59<span>per coaster set</span></div>
-          <a href="https://kelphelpers.com" class="btn btn-primary" target="_blank">Buy a Set →</a>
+          <a href="https://kelphelpers.com" class="btn btn-primary" target="_blank" data-track="restoration-coaster-set">Buy a Set →</a>
         </div>
       </div>
 
@@ -111,7 +111,7 @@
         </div>
         <div class="product-cta">
           <div class="product-price">From $120<span>per night</span></div>
-          <a href="https://surfshacks.rad.kiwi/" class="btn btn-primary" target="_blank">Book a Stay →</a>
+          <a href="https://surfshacks.rad.kiwi/" class="btn btn-primary" target="_blank" data-track="book-a-surf-shack">Book a Stay →</a>
         </div>
       </div>
 
@@ -122,9 +122,23 @@
 <section class="section alt">
   <div class="container">
     <div class="cta-banner">
+      <h2>Want updates as new ways to help go live?</h2>
+      <p>Leave your email and we'll let you know when new restoration products, locations, or volunteer opportunities open up.</p>
+      <form id="signup-form" class="signup-form">
+        <input type="email" placeholder="you@example.com" required/>
+        <button type="submit" class="btn btn-lime">Keep me posted</button>
+      </form>
+      <p class="signup-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="cta-banner">
       <h2>Want to see the bigger picture first?</h2>
       <p>Explore the full restoration model, the science behind it, and every initiative working to bring Aotearoa's kelp forests back.</p>
-      <a href="https://restore.kelphelpers.org" class="cta-btn-white" target="_blank">Explore the Restoration Hub →</a>
+      <a href="https://restore.kelphelpers.org" class="cta-btn-white" target="_blank" data-track="explore-restoration-hub">Explore the Restoration Hub →</a>
     </div>
   </div>
 </section>
@@ -163,6 +177,7 @@
   </div>
 </footer>
 
+<script src="/supabase-config.js"></script>
 <script src="/main.js"></script>
 </body>
 </html>
