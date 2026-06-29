@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Empty Reef: New Zealand's Vanishing Fish Stocks — Kelp Helpers</title>
-  <meta name="description" content="Snapper, tarakihi, rock lobster, orange roughy — four New Zealand fish stocks, four very different declines. Real biomass data, recreated as charts, with sources."/>
+  <title>Crayfish "Functionally Extinct" in the Hauraki Gulf — Kelp Helpers</title>
+  <meta name="description" content="What 'functionally extinct' actually means for Hauraki Gulf crayfish, the data behind a 76% decline, and why it's the missing link in the kelp forest collapse."/>
   <link rel="stylesheet" href="/style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -67,8 +67,8 @@
 <section class="blog-hero">
   <div class="container">
     <div class="blog-byline">Blog &middot; By <strong>Alex Radley</strong> &middot; Founder, Kelp Helpers</div>
-    <h1>The Empty Reef: New Zealand's Vanishing Fish Stocks</h1>
-    <p class="blog-deck">Snapper, tarakihi, rock lobster, orange roughy — four very different fisheries, four very different timelines, and the same underlying story. Here's what the actual biomass data says, recreated as charts, with every source linked.</p>
+    <h1>Crayfish "Functionally Extinct": What's Actually Happening in the Hauraki Gulf</h1>
+    <p class="blog-deck">In 2016, scientists declared Hauraki Gulf crayfish "functionally extinct." Almost a decade later, the population still hasn't recovered — and the data shows exactly why kina barrens keep spreading.</p>
   </div>
 </section>
 
@@ -76,27 +76,52 @@
   <div class="container">
     <div class="article-body">
 
-      <p>It's easy to talk about "declining fish stocks" in the abstract. It's harder, and more useful, to look at the actual numbers fisheries scientists use to track a stock's health: biomass as a percentage of its <em>unfished</em> level — what the population would be if no one had ever fished it. Below are four New Zealand species where that number has been measured for decades, each telling a slightly different version of the same story.</p>
+      <h2>What "Functionally Extinct" Actually Means</h2>
+      <p>Kōura — rock lobster, or crayfish — aren't gone from the Hauraki Gulf. You can still find them, and a commercial and recreational fishery still operates there. "Functionally extinct" describes something more specific: there are no longer enough large crayfish on the reef to do the job they evolved to do. Alongside snapper, crayfish are one of the few predators capable of eating kina (sea urchins) once they reach a certain size. When predator numbers fall below the threshold needed to keep kina populations in check, the kina are effectively free to graze unchecked — even though the predators technically still exist.</p>
+      <p>That threshold was declared crossed for the Hauraki Gulf back in 2016, and despite ongoing management changes, it remains the case today.</p>
 
-      <h2>Snapper (SNA1) — the recovery story</h2>
-      <p>Snapper in the Hauraki Gulf and Bay of Plenty (the SNA1 stock) is New Zealand's best-known fisheries recovery. By the early 1980s, heavy fishing pressure had driven the stock down to roughly 10–15% of its unfished biomass. The introduction of the Quota Management System in 1986 changed the trajectory: SNA1 has since rebuilt to somewhere in the 40–50% range, with a formal target of 40% of unfished biomass under the current SNA1 Management Plan.</p>
+      <h2>The Numbers</h2>
+      <p>Multiple independent lines of evidence point the same way:</p>
+      <ul>
+        <li>The Hauraki Gulf Forum's State of the Gulf reporting has tracked an overall <strong>76% decline</strong> in the crayfish population — one of the most dramatic losses of any species monitored in the Gulf.</li>
+        <li>Research comparing fished reefs to nearby no-take marine reserves found legal-sized lobster biomass on fished reefs at the Leigh and Tāwharanui reserves sitting at just <strong>2–3%</strong> of the biomass measured inside the reserves; a similar comparison at Hahei put fished reefs at around <strong>7%</strong> of in-reserve biomass.</li>
+        <li>Stock assessments estimate the current crayfish population at somewhere between <strong>3% and 12% of its unfished biomass</strong> — and even that may understate the loss, because the "unfished" baseline used in assessments is calculated from 1945 abundance data, by which point the population had likely already declined by around 22% from pre-fishing levels. The starting line itself was probably already moved.</li>
+      </ul>
 
-      <h2>Tarakihi (East Coast) — the stock still falling</h2>
-      <p>Tarakihi tells the opposite story. The East Coast stock was estimated at around 17% of unfished biomass in 2017, and a 2018 assessment put it lower still, at 15.9% — meaning roughly 84% of the original tarakihi population had been removed from east coast waters. Modelling shows the stock has not been above 27% of unfished biomass since 1975, and has sat below 20% since the early 2000s. The current rebuild plan targets 35% of unfished biomass, but not until 2037.</p>
-
-      <h2>Rock Lobster (Hauraki Gulf) — locally "functionally extinct"</h2>
-      <p>Crayfish in the inner Hauraki Gulf show how a species can collapse locally even while broader regional numbers look healthier. Research at the Leigh and Tāwharanui marine reserves found legal-sized lobster biomass on fished reefs outside the reserves sitting at just 2–3% of the biomass found inside them; a comparable study at Hahei found fished reefs at around 7% of in-reserve biomass. By 2016, scientists were describing Hauraki Gulf crayfish as "functionally extinct" in the areas open to fishing — even as the wider CRA2 stock assessment (which spans a much larger area) has shown signs of recovery in recent years.</p>
-
-      <h2>Orange Roughy — the cautionary tale</h2>
-      <p>Orange roughy is the starkest example of how badly a deepwater fishery can go wrong when a slow-growing species (it can live to 120 years) is fished like a fast-growing one. New Zealand's Challenger Plateau stock collapsed to just 3% of its unfished biomass before catch limits were drastically cut, and three of the country's eight orange roughy fisheries had closed entirely by the end of the 1990s. A 2025 assessment found the fishery's largest stock close to collapse again, at an estimated 8–18% of unfished biomass — and modelling suggests that even if fishing stopped immediately, recovery to a safe level could take 33 to 74 years, possibly longer.</p>
-
-      <div class="chart-block">
-        <canvas id="fishChart"></canvas>
-        <p class="chart-caption">Current (or most recent) biomass as a percentage of unfished biomass, compared with each stock's official rebuild target where one exists. Rock lobster and orange roughy figures reflect the specific local studies and historic collapse cited above, not the full management-area stock assessment.</p>
+      <div class="diagram-block">
+        <canvas id="crayfishChart"></canvas>
+        <p class="chart-caption">Legal-sized rock lobster biomass on fished reefs, shown relative to biomass measured inside paired no-take marine reserves at the same locations (reserve = 100). Source: University of Auckland marine reserve studies, cited below.</p>
       </div>
 
-      <h2>Why this matters for kelp</h2>
-      <p>Snapper and rock lobster aren't just food fish — they're the predators that keep kina in check on Aotearoa's reefs. When their numbers collapse locally, as they have across much of the inner Hauraki Gulf, kina populations explode unchecked, graze kelp forests down to bare rock, and create the urchin barrens that Kelp Helpers exists to reverse. The decline in this chart isn't a separate problem from kelp loss — it's the cause of it. I've gone deeper on the rock lobster side of that story in <a href="/blog/crayfish-functionally-extinct-hauraki-gulf">Crayfish "Functionally Extinct"</a>.</p>
+      <h2>Why Marine Reserves Haven't Been Enough</h2>
+      <p>If reserves protect crayfish so much more effectively, the obvious question is why the wider Gulf hasn't recovered through spillover from those protected areas. A 2021 University of Auckland study found the answer: existing marine reserves in the Hauraki Gulf are simply too small and too sparse to sustain a Gulf-wide population. Crayfish move, and juvenile and adult lobsters cross reserve boundaries into fished water faster than reserves can replenish their numbers — meaning even healthy reserve populations get steadily drawn down by fishing pressure just outside their borders.</p>
+
+      <h2>The Predator Gap and Kina Barrens</h2>
+      <p>This is the mechanism that connects crayfish decline directly to kelp loss. Without enough crayfish (and large snapper) on a reef, kina populations are free to expand unchecked. Once kina density crosses a tipping point, they graze kelp down to bare rock and maintain that bare state indefinitely — even if kelp spores are present, juvenile kelp gets eaten before it can establish. That bare-rock end state is a kina barren, and it's largely irreversible without active intervention, because the urchins themselves prevent the predator recovery that would otherwise control them.</p>
+      <p>It's the same mechanism described in <a href="/blog/the-empty-reef">The Empty Reef</a>, and the same reef management variable modelled in <a href="/blog/67-years-to-go">67 Years to Go</a> — protected, predator-rich reefs sustain kelp; fished, predator-depleted reefs don't, regardless of climate scenario.</p>
+
+      <h2>Where Things Stand</h2>
+      <p>Management response has been mixed. The recreational daily crayfish bag limit for the Hauraki Gulf and surrounding areas was halved in recent years, though scientists quoted at the time argued the cut still wasn't enough to reverse the decline. Meanwhile, Fisheries New Zealand has separately been considering proposals that would <em>increase</em> commercial catch limits in the Hauraki Gulf and Bay of Plenty crayfish fishery — a move conservation groups say runs directly against the goal of rebuilding a population already classified as functionally extinct.</p>
+      <p>Initiatives like Revive Our Gulf are working on the other side of the same problem: restoring the mussel beds and kelp habitat that a recovering predator population would eventually need to thrive in. But habitat restoration and predator recovery have to happen together — rebuilding kelp without rebuilding crayfish numbers leaves the system one grazing event away from reverting to barren.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card2">
+          <div class="num">2016</div>
+          <div class="label">year Hauraki Gulf crayfish were declared functionally extinct</div>
+        </div>
+        <div class="stat-card2">
+          <div class="num">76%</div>
+          <div class="label">overall decline in the Gulf's crayfish population (State of the Gulf)</div>
+        </div>
+        <div class="stat-card2">
+          <div class="num">3–12%</div>
+          <div class="label">of unfished biomass remaining, by current stock estimates</div>
+        </div>
+        <div class="stat-card2">
+          <div class="num">2–3%</div>
+          <div class="label">legal lobster biomass on fished reefs, relative to nearby no-take reserves</div>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -105,8 +130,8 @@
 <section class="section alt">
   <div class="container">
     <div class="cta-banner">
-      <h2>Help rebuild the reef from the bottom up</h2>
-      <p>Restoring kelp and removing kina won't bring snapper and crayfish back on its own — but it rebuilds the habitat their recovery depends on.</p>
+      <h2>Rebuilding the reef needs both sides of this story</h2>
+      <p>Kelp restoration creates the habitat a recovering crayfish population will need — it's the half of the cycle we can act on directly, right now.</p>
       <a href="/help" class="cta-btn-white">Help Your Way →</a>
     </div>
   </div>
@@ -117,17 +142,17 @@
     <div class="article-body">
       <h2 style="font-size:1.3rem;">Sources</h2>
       <ul>
-        <li>Fisheries New Zealand, <a href="https://www.mpi.govt.nz/dmsdocument/13801-Snapper-SNA1-Management-Plan" target="_blank">SNA1 Snapper Management Plan</a></li>
-        <li>Fisheries New Zealand, <a href="https://www.mpi.govt.nz/dmsdocument/69972-Fisheries-Assessment-Plenary-May-2025-Volume-3-SNAPPER-SNA-1" target="_blank">Fisheries Assessment Plenary, May 2025 — Snapper (SNA 1)</a></li>
-        <li>NIWA, <a href="https://niwa.co.nz/fisheries/snapper-stock-status" target="_blank">Snapper Stock Status</a></li>
-        <li>The Fishing Website, <a href="https://www.fishing.net.nz/fishing-advice/general-articles/tarakihi-the-forgotten-fish/" target="_blank">Tarakihi: The Forgotten Fish</a></li>
-        <li>Fisheries New Zealand, <a href="https://www.mpi.govt.nz/fishing-aquaculture/fisheries-management/fish-stock-status/tarakihi-a-stock-under-a-rebuilding-plan" target="_blank">Tarakihi: a stock under a rebuilding plan</a></li>
-        <li>The Spinoff, <a href="https://thespinoff.co.nz/society/28-06-2021/the-fight-to-save-one-of-aotearoas-favourite-fish" target="_blank">The fight to save one of Aotearoa's favourite fish</a></li>
+        <li>Stuff, <a href="https://www.stuff.co.nz/business/farming/83684122/crayfish-functionally-extinct-in-the-hauraki-gulf" target="_blank">Crayfish 'functionally extinct' in the Hauraki Gulf</a></li>
         <li>1News, <a href="https://www.1news.co.nz/2018/02/05/functionally-extinct-fishing-advocacy-group-want-to-see-crayfish-put-before-profit-due-to-declining-numbers/" target="_blank">'Functionally extinct' — declining crayfish numbers</a></li>
-        <li>Hauraki Gulf Forum, <a href="https://gulfjournal.org.nz/2022/06/decline-of-crayfish-in-marine-reserves/" target="_blank">Why are crayfish numbers falling even in our no-take Marine Reserves?</a></li>
+        <li>Hauraki Gulf Forum / Gulf Journal, <a href="https://gulfjournal.org.nz/2022/06/decline-of-crayfish-in-marine-reserves/" target="_blank">Why are crayfish numbers falling even in our no-take Marine Reserves?</a></li>
+        <li>New Zealand Geographic, <a href="https://www.nzgeo.com/stories/state-of-cray/" target="_blank">State of Cray</a></li>
+        <li>New Zealand Geographic, <a href="https://www.nzgeo.com/stories/a-tragedy-of-the-commons/" target="_blank">A Tragedy of the Commons</a></li>
+        <li>University of Auckland, <a href="https://www.auckland.ac.nz/en/news/2021/05/04/existing-reserves-too-small-to-protect-crayfish-.html" target="_blank">Existing reserves too small to protect crayfish</a></li>
+        <li>NZ Herald, <a href="https://www.nzherald.co.nz/nz/state-of-the-hauraki-gulf-crayfish-in-peril-snapper-just-hanging-in-there-report/O2CUEVIIJYFJOHQNNFPIPWKOVA/" target="_blank">State of the Hauraki Gulf: Crayfish in peril, snapper just hanging in there</a></li>
+        <li>NZ Herald, <a href="https://www.nzherald.co.nz/nz/hauraki-gulf-recreational-crayfish-take-slashed-in-half-scientists-say-not-enough/EXQTEQKRX2MBIEWU7CHDASXKKQ/" target="_blank">Hauraki Gulf recreational crayfish take slashed in half — scientists say not enough</a></li>
+        <li>LegaSea, <a href="https://legasea.co.nz/2025/01/23/pressure-on-crayfish-set-to-rise-in-hauraki-gulf-and-bay-of-plenty/" target="_blank">Pressure on Crayfish set to rise in Hauraki Gulf and Bay of Plenty</a></li>
+        <li>Revive Our Gulf, <a href="https://www.reviveourgulf.org.nz/why/" target="_blank">Why re-mussel the Gulf?</a></li>
         <li>The Fishing Website, <a href="https://www.fishing.net.nz/fishing-advice/general-articles/myth-busting-the-science-behind-the-cra-2-rock-lobster-fishery/" target="_blank">Myth Busting: The Science Behind the CRA 2 Rock Lobster Fishery</a></li>
-        <li>Office of the Prime Minister's Chief Science Advisor, <a href="https://www.pmcsa.ac.nz/2021/02/21/orange-roughy-stock-health/" target="_blank">Case study: Orange roughy stock health</a></li>
-        <li>Newsroom, <a href="https://newsroom.co.nz/2025/07/08/study-finds-nzs-largest-orange-roughy-fishery-facing-collapse/" target="_blank">Study finds NZ's largest orange roughy fishery facing collapse</a></li>
       </ul>
     </div>
   </div>
@@ -171,56 +196,47 @@
 <script src="/main.js"></script>
 <script>
 (function() {
-  const ctx = document.getElementById('fishChart').getContext('2d');
+  const ctx = document.getElementById('crayfishChart').getContext('2d');
   const navy = '#123540';
   const lime = '#D5FBA0';
-  const forest = '#677150';
 
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: [
-        'Snapper (SNA1)',
-        'Tarakihi (East Coast)',
-        'Rock Lobster (Hauraki Gulf, fished reefs)',
-        'Orange Roughy (Challenger Plateau, historic collapse)'
-      ],
+      labels: ['Leigh / Tāwharanui (fished reef)', 'Hahei (fished reef)'],
       datasets: [
         {
-          label: 'Current / most recent estimate (% of unfished biomass)',
-          data: [45, 16, 3, 3],
-          backgroundColor: navy,
+          label: 'Inside paired no-take marine reserve',
+          data: [100, 100],
+          backgroundColor: lime,
           borderRadius: 4
         },
         {
-          label: 'Official rebuild target (% of unfished biomass)',
-          data: [40, 35, null, null],
-          backgroundColor: lime,
+          label: 'Outside reserve, open to fishing',
+          data: [2.5, 7],
+          backgroundColor: navy,
           borderRadius: 4
         }
       ]
     },
     options: {
+      indexAxis: 'y',
       responsive: true,
       plugins: {
         legend: { position: 'bottom', labels: { font: { family: 'Inter' }, color: navy } },
         tooltip: {
           callbacks: {
             label: function(context) {
-              if (context.parsed.y === null) return null;
-              return context.dataset.label + ': ' + context.parsed.y + '%';
+              return context.dataset.label + ': ' + context.parsed.x + (context.parsed.x === 100 ? ' (baseline)' : '%');
             }
           }
         }
       },
       scales: {
-        y: {
-          beginAtZero: true,
-          max: 60,
-          title: { display: true, text: '% of unfished biomass', font: { weight: 'bold' } }
-        },
         x: {
-          ticks: { font: { family: 'Inter', size: 11 } }
+          beginAtZero: true,
+          max: 110,
+          title: { display: true, text: 'Relative legal lobster biomass (reserve = 100)', font: { weight: 'bold' } }
         }
       }
     }
